@@ -2,7 +2,7 @@
 
 [**Data**](#dataset-and-preprocessing) | [**Play with Prompt-SAVN/SAVN Trainer**](#quick-tour) | [**Results**](#results)
 
-The repository works on the implementation of Prompt-SAVN in Pytorch. We explore textual prompt for SAVN, called Prompt-SAVN, a simple yet effective technique for
+The repository works on the implementation of **Prompt-SAVN** in Pytorch. We explore textual prompt for SAVN, called Prompt-SAVN, a simple yet effective technique for
 better transfering language knowledge from the pre-trained language model (PLM)
 to DST. Specifically, we re-frame gate classification as masked language modeling, We re-frame gate classification as masked language modeling, our prompt design is model agnostic which is plausible to any masked language model.
 
@@ -15,7 +15,7 @@ Pre-trained language models (PLMs), such as SAVN, have been widely used in dialo
 
 
 <p align="center">
-<img src=".metas/prompt-savn.pdf" width="30%" />
+<img src=".metas/prompt-savn.png" width="30%" />
 </p>
 
 <p align="center"> The overview of SAVN</p>
@@ -27,7 +27,7 @@ Our code is built on the original implementation of [SAVN](https://github.com/wy
 
 In general, our script can be applied on:
 
-1. Prompt-SAVN and SAVN
+1. Prompt-SAVN and SAVN on MultiWOZ 2.1 
 2. Performing parameter-efficient tuning by freezing PLM's weights.
 3. Training our models in a limited-data setting.
 
@@ -132,7 +132,7 @@ python run_savn_trainer.py \
 This example only runs Prompt-SAVN on random seed 42. To reproduce the result of using multiple random seeds. We suggest using the trainer script below. And note that the value normalization is required if the argument `--use_vn` is provided. The checkpoint and model architecture should be included in `output/vn_1_2.1_1`
 
 
-### Training Prompt-SAVN / SAVN with Trainer script
+### Training Prompt-SAVN / SAVN with script
 
 To evaluate the architecture in different settings, such as the tuning strategy or training in a low-data setting. We use separate shell scripts to run various experiments on Prompt-SAVN and SAVN. 
 
@@ -166,14 +166,14 @@ We show our result by running the scripts described above. For detailed informat
 #### (I) Comparison of Prompt-SAVN and SAVN on 5 random seeds 
 
 <p float="left">
-  <img src=".metas/test_joint.pdf" width="300" />
-  <img src=".metas/test_slot.pdf" width="300" /> 
+  <img src=".metas/test_joint.png" width="300" />
+  <img src=".metas/test_slot.png" width="300" /> 
 </p>
 
 
 <p float="left">
-  <img src=".metas/test_cls.pdf" width="300" />
-  <img src=".metas/test_max.pdf" width="300" />
+  <img src=".metas/test_cls.png" width="300" />
+  <img src=".metas/test_max.png" width="300" />
 </p>
 
 
